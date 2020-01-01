@@ -1,26 +1,26 @@
 package kata5.main;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import kata5.model.Histogram;
 import kata5.model.Mail;
 import kata5.view.HistogramDisplay;
 import kata5.view.MailHistogramBuilder;
-import kata5.view.MailListReader;
+import kata5.view.MailListReaderBD;
 
 public class Kata5 {
 
-    private final String fileName;
     private List<Mail> mailList;
     private Histogram<String> histogram;
     private HistogramDisplay histoDisplay;
 
-    public Kata5(String fileName) {
-        this.fileName = fileName;
-    }
-
     public static void main(String[] args) {
-        Kata5 kata4 = new Kata5("email");
-        kata4.execute();
+        Kata5 kata5 = new Kata5();
+        kata5.execute();
     }
 
     public void execute() {
@@ -30,7 +30,7 @@ public class Kata5 {
     }
 
     public void input() {
-        mailList = MailListReader.read(fileName);
+        mailList = MailListReaderBD.read();
     }
 
     public void process() {
