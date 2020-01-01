@@ -1,11 +1,6 @@
 package kata5.main;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import kata5.model.Histogram;
 import kata5.model.Mail;
 import kata5.view.HistogramDisplay;
